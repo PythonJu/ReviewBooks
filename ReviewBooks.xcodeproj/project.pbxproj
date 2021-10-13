@@ -13,6 +13,15 @@
 		CF02931B2705B35700A8C493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0293192705B35700A8C493 /* Main.storyboard */; };
 		CF02931D2705B35900A8C493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF02931C2705B35900A8C493 /* Assets.xcassets */; };
 		CF0293202705B35900A8C493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF02931E2705B35900A8C493 /* LaunchScreen.storyboard */; };
+		CF0293332707071200A8C493 /* UserLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0293322707071200A8C493 /* UserLogInViewController.swift */; };
+		CF0293362707073500A8C493 /* UserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0293352707073500A8C493 /* UserSignUpViewController.swift */; };
+		CF02933A270709EA00A8C493 /* UserLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF029339270709EA00A8C493 /* UserLogIn.storyboard */; };
+		CF02933D27070A2E00A8C493 /* UserSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF02933C27070A2E00A8C493 /* UserSignUp.storyboard */; };
+		CF029348270895A700A8C493 /* UserSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF029347270895A700A8C493 /* UserSignUpViewModel.swift */; };
+		CF02934D2708DA6E00A8C493 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF02934C2708DA6D00A8C493 /* FirstViewController.swift */; };
+		CF0293502708DAB600A8C493 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF02934F2708DAB600A8C493 /* First.storyboard */; };
+		CF02935A270D623000A8C493 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF029359270D623000A8C493 /* GoogleService-Info.plist */; };
+		CFF2ECEA2715E96B00D4A0DB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		CF02931C2705B35900A8C493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF02931F2705B35900A8C493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF0293212705B35900A8C493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF0293322707071200A8C493 /* UserLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogInViewController.swift; sourceTree = "<group>"; };
+		CF0293352707073500A8C493 /* UserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewController.swift; sourceTree = "<group>"; };
+		CF029339270709EA00A8C493 /* UserLogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLogIn.storyboard; sourceTree = "<group>"; };
+		CF02933C27070A2E00A8C493 /* UserSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserSignUp.storyboard; sourceTree = "<group>"; };
+		CF029347270895A700A8C493 /* UserSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewModel.swift; sourceTree = "<group>"; };
+		CF02934C2708DA6D00A8C493 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		CF02934F2708DAB600A8C493 /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
+		CF029359270D623000A8C493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,96 @@
 		CF0293122705B35700A8C493 /* ReviewBooks */ = {
 			isa = PBXGroup;
 			children = (
-				CF0293132705B35700A8C493 /* AppDelegate.swift */,
-				CF0293152705B35700A8C493 /* SceneDelegate.swift */,
+				CF0293282705B36C00A8C493 /* View */,
+				CF02932A2705B38700A8C493 /* Viewmodel */,
+				CF0293292705B37F00A8C493 /* Model */,
+				CF0293382707074F00A8C493 /* AppDelegate */,
 				CF0293172705B35700A8C493 /* ViewController.swift */,
 				CF0293192705B35700A8C493 /* Main.storyboard */,
 				CF02931C2705B35900A8C493 /* Assets.xcassets */,
 				CF02931E2705B35900A8C493 /* LaunchScreen.storyboard */,
 				CF0293212705B35900A8C493 /* Info.plist */,
+				CF029359270D623000A8C493 /* GoogleService-Info.plist */,
 			);
 			path = ReviewBooks;
+			sourceTree = "<group>";
+		};
+		CF0293282705B36C00A8C493 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF02934B2708DA5200A8C493 /* FirstView */,
+				CF02932C2707069A00A8C493 /* UserLogIn */,
+				CF02932B2705B3BB00A8C493 /* UserSignIn */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF0293292705B37F00A8C493 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF02932A2705B38700A8C493 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				CF029346270894AA00A8C493 /* UserSignUpVM */,
+				CF0293452708949700A8C493 /* UserLogInVM */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		CF02932B2705B3BB00A8C493 /* UserSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				CF0293352707073500A8C493 /* UserSignUpViewController.swift */,
+				CF02933C27070A2E00A8C493 /* UserSignUp.storyboard */,
+			);
+			path = UserSignIn;
+			sourceTree = "<group>";
+		};
+		CF02932C2707069A00A8C493 /* UserLogIn */ = {
+			isa = PBXGroup;
+			children = (
+				CF0293322707071200A8C493 /* UserLogInViewController.swift */,
+				CF029339270709EA00A8C493 /* UserLogIn.storyboard */,
+			);
+			path = UserLogIn;
+			sourceTree = "<group>";
+		};
+		CF0293382707074F00A8C493 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CF0293132705B35700A8C493 /* AppDelegate.swift */,
+				CF0293152705B35700A8C493 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CF0293452708949700A8C493 /* UserLogInVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserLogInVM;
+			sourceTree = "<group>";
+		};
+		CF029346270894AA00A8C493 /* UserSignUpVM */ = {
+			isa = PBXGroup;
+			children = (
+				CF029347270895A700A8C493 /* UserSignUpViewModel.swift */,
+			);
+			path = UserSignUpVM;
+			sourceTree = "<group>";
+		};
+		CF02934B2708DA5200A8C493 /* FirstView */ = {
+			isa = PBXGroup;
+			children = (
+				CF02934C2708DA6D00A8C493 /* FirstViewController.swift */,
+				CF02934F2708DAB600A8C493 /* First.storyboard */,
+			);
+			path = FirstView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +182,8 @@
 			dependencies = (
 			);
 			name = ReviewBooks;
+			packageProductDependencies = (
+			);
 			productName = ReviewBooks;
 			productReference = CF0293102705B35700A8C493 /* ReviewBooks.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +211,8 @@
 				Base,
 			);
 			mainGroup = CF0293072705B35700A8C493;
+			packageReferences = (
+			);
 			productRefGroup = CF0293112705B35700A8C493 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +229,11 @@
 			files = (
 				CF0293202705B35900A8C493 /* LaunchScreen.storyboard in Resources */,
 				CF02931D2705B35900A8C493 /* Assets.xcassets in Resources */,
+				CF02933D27070A2E00A8C493 /* UserSignUp.storyboard in Resources */,
+				CF0293502708DAB600A8C493 /* First.storyboard in Resources */,
 				CF02931B2705B35700A8C493 /* Main.storyboard in Resources */,
+				CF02933A270709EA00A8C493 /* UserLogIn.storyboard in Resources */,
+				CF02935A270D623000A8C493 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +245,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF0293182705B35700A8C493 /* ViewController.swift in Sources */,
+				CF0293362707073500A8C493 /* UserSignUpViewController.swift in Sources */,
 				CF0293142705B35700A8C493 /* AppDelegate.swift in Sources */,
+				CFF2ECEA2715E96B00D4A0DB /* UIColorExtension.swift in Sources */,
+				CF029348270895A700A8C493 /* UserSignUpViewModel.swift in Sources */,
 				CF0293162705B35700A8C493 /* SceneDelegate.swift in Sources */,
+				CF02934D2708DA6E00A8C493 /* FirstViewController.swift in Sources */,
+				CF0293332707071200A8C493 /* UserLogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
