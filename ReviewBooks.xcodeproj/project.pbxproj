@@ -21,6 +21,7 @@
 		CF02934D2708DA6E00A8C493 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF02934C2708DA6D00A8C493 /* FirstViewController.swift */; };
 		CF0293502708DAB600A8C493 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF02934F2708DAB600A8C493 /* First.storyboard */; };
 		CF02935A270D623000A8C493 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF029359270D623000A8C493 /* GoogleService-Info.plist */; };
+		CF8AD1082719DCF9009974CB /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8AD1072719DCF9009974CB /* Singleton.swift */; };
 		CFF2ECEA2715E96B00D4A0DB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		CF02934C2708DA6D00A8C493 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CF02934F2708DAB600A8C493 /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
 		CF029359270D623000A8C493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF8AD1072719DCF9009974CB /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */,
+				CF8AD1072719DCF9009974CB /* Singleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF0293182705B35700A8C493 /* ViewController.swift in Sources */,
+				CF8AD1082719DCF9009974CB /* Singleton.swift in Sources */,
 				CF0293362707073500A8C493 /* UserSignUpViewController.swift in Sources */,
 				CF0293142705B35700A8C493 /* AppDelegate.swift in Sources */,
 				CFF2ECEA2715E96B00D4A0DB /* UIColorExtension.swift in Sources */,

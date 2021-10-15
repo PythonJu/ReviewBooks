@@ -16,10 +16,12 @@ class UserLogInViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func presentSignUpVC(_ sender: UIButton) {
-        let moveToSignUpVC: UserSignUpViewController = UIStoryboard(name: "UserSignUp", bundle: nil).instantiateViewController(identifier: "UserSignUpStoryboard") as! UserSignUpViewController
         moveToSignUpVC.modalPresentationStyle = .fullScreen
         self.present(moveToSignUpVC, animated: true, completion: nil)
     }
+    
+    private let moveToSignUpVC: UserSignUpViewController = UIStoryboard(name: "UserSignUp", bundle: nil).instantiateViewController(identifier: "UserSignUpStoryboard") as! UserSignUpViewController
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,20 @@ class UserLogInViewController: UIViewController, UITextFieldDelegate {
         logInButton?.layer.cornerRadius = 5.0
         signUpButton?.layer.cornerRadius = 5.0
         
-        userIDTextField.delegate = self
-        userPWTextField.delegate = self
+        userIDTextField?.delegate = self
+        userPWTextField?.delegate = self
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if Singleton.sharedInstance.changePresentVC == "moveToSignUpVC" {
+            Singleton.sharedInstance.changePresentVC = "moveToLogInVC"
+            moveToSignUpVC.modalPresentationStyle = .fullScreen
+            self.present(moveToSignUpVC, animated: true, completion: nil)
+        } else {
+            return
+        }
     }
 }

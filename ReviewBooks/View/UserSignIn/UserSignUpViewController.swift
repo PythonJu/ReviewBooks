@@ -17,16 +17,12 @@ class UserSignUpViewController: UIViewController {
     
     
     @IBAction func presentLogInVC(_ sender: UIButton) {
-        let moveToLogInVC: UserLogInViewController = UIStoryboard(name: "UserLogIn", bundle: nil).instantiateViewController(identifier: "UserLogInStoryboard") as! UserLogInViewController
-        guard ((self.presentingViewController as? FirstViewController) != nil) else {
-            self.dismiss(animated: true, completion: nil)
-            return
-        }
-        moveToLogInVC.modalPresentationStyle = .fullScreen
-        self.presentingViewController?.dismiss(animated: true, completion: {
-            self.presentingViewController?.present(moveToLogInVC, animated: true, completion: nil)
-            print("---------------------------------")
-        })
+//        guard ((self.presentingViewController as? FirstViewController) != nil) else {
+//            self.dismiss(animated: true, completion: nil)
+//            return
+//        }
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

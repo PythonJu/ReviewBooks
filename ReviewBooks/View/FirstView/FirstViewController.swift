@@ -13,15 +13,16 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func presentLogInVC(_ sender: UIButton) {
-        let moveToLogInVC: UserLogInViewController = UIStoryboard(name: "UserLogIn", bundle: nil).instantiateViewController(identifier: "UserLogInStoryboard") as! UserLogInViewController
         moveToLogInVC.modalPresentationStyle = .fullScreen
         self.present(moveToLogInVC, animated: true, completion: nil)
     }
     @IBAction func presentSignInVC(_ sender: UIButton) {
-        let moveToSignUpVC: UserSignUpViewController = UIStoryboard(name: "UserSignUp", bundle: nil).instantiateViewController(identifier: "UserSignUpStoryboard") as! UserSignUpViewController
-        moveToSignUpVC.modalPresentationStyle = .fullScreen
-        self.present(moveToSignUpVC, animated: true, completion: nil)
+        Singleton.sharedInstance.changePresentVC = "moveToSignUpVC"
+        moveToLogInVC.modalPresentationStyle = .fullScreen
+        self.present(moveToLogInVC, animated: false, completion: nil)
     }
+    
+    private let moveToLogInVC: UserLogInViewController = UIStoryboard(name: "UserLogIn", bundle: nil).instantiateViewController(identifier: "UserLogInStoryboard") as! UserLogInViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
