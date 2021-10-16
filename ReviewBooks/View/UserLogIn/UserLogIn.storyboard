@@ -47,7 +47,7 @@
                                                 </constraints>
                                                 <color key="textColor" systemColor="systemGray6Color"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="username"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -68,7 +68,7 @@
                                                 </constraints>
                                                 <color key="textColor" systemColor="systemGray6Color"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -127,6 +127,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonStackView" destination="MeN-Tr-g7R" id="nMg-mv-a5X"/>
                         <outlet property="logInButton" destination="pgk-UO-Rdh" id="Tm4-zp-EAy"/>
                         <outlet property="signUpButton" destination="dzK-4q-6Lc" id="kTp-Ae-X8D"/>
                         <outlet property="userIDTextField" destination="wgq-4U-lN0" id="Ulp-cV-pvL"/>

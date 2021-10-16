@@ -14,14 +14,7 @@ class UserSignUpViewController: UIViewController {
     @IBOutlet weak var againUserPWTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
-    
-    
     @IBAction func presentLogInVC(_ sender: UIButton) {
-//        guard ((self.presentingViewController as? FirstViewController) != nil) else {
-//            self.dismiss(animated: true, completion: nil)
-//            return
-//        }
-//        self.presentingViewController?.dismiss(animated: true, completion: nil)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -32,6 +25,8 @@ class UserSignUpViewController: UIViewController {
         createUserPWTextField.attributedPlaceholder = NSAttributedString(string: "英数字8文字以上", attributes: [.font: UIFont.boldSystemFont(ofSize: 18), .foregroundColor: UIColor.systemGray3])
         againUserPWTextField.attributedPlaceholder = NSAttributedString(string: "パスワードを再入力してください", attributes: [.font: UIFont.boldSystemFont(ofSize: 18), .foregroundColor: UIColor.systemGray3])
         
+        createUserPWTextField.isSecureTextEntry = true
+        againUserPWTextField.isSecureTextEntry = true
         signInButton.layer.cornerRadius = 5.0
         signInButton.backgroundColor = UIColor.rgb(red: 180, green: 150, blue: 255)
         
@@ -42,15 +37,21 @@ class UserSignUpViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
+}
+
+extension UserSignUpViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @objc func showKeyboard(notification: Notification) {
         let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         
         guard let keyboardMinY = keyboardFrame?.minY else { return }
         let signInbuttonMaxY = signInButton.frame.maxY
-        let distance = signInbuttonMaxY - keyboardMinY
+        let distance = signInbuttonMaxY - keyboardMinY + 10
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: 0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
             self.view.transform = CGAffineTransform(translationX: 0, y: -distance)
         })
     }
@@ -59,13 +60,6 @@ class UserSignUpViewController: UIViewController {
             self.view.transform = .identity
         })
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-}
-
-extension UserSignUpViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let emailIsEmpty = addUserEmailTextField.text?.isEmpty ?? true
