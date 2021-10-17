@@ -107,6 +107,9 @@
                                 <state key="normal" title="新規登録">
                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedSignUp:" destination="qZM-d4-MIl" eventType="touchUpInside" id="Mnr-M5-L2d"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="既にアカウントをお持ちの方は" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-CZ-rXa">
                                 <rect key="frame" x="79" y="688" width="196" height="44"/>
@@ -151,7 +154,7 @@
                         <outlet property="addUserEmailTextField" destination="yFG-JP-mac" id="Zdc-TM-Tzb"/>
                         <outlet property="againUserPWTextField" destination="z1t-We-psB" id="cdt-Kn-Fsv"/>
                         <outlet property="createUserPWTextField" destination="slI-AP-Vpb" id="K6q-Fl-9AS"/>
-                        <outlet property="signInButton" destination="k9H-RI-Y40" id="kn9-F3-NPQ"/>
+                        <outlet property="signUpButton" destination="k9H-RI-Y40" id="kn9-F3-NPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpw-Xk-cRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

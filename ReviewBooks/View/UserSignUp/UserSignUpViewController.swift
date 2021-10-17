@@ -6,14 +6,36 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class UserSignUpViewController: UIViewController {
     
     @IBOutlet weak var addUserEmailTextField: UITextField!
     @IBOutlet weak var createUserPWTextField: UITextField!
     @IBOutlet weak var againUserPWTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
+    @IBAction func tappedSignUp(_ sender: UIButton) {
+        handlerAuthToFirebase()
+        guard let email: String = addUserEmailTextField.text else {
+            print("email is empty")
+            return
+        }
+        guard let password: String = createUserPWTextField.text else {
+            print("password is empty")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            guard let user = authResult?.user, error == nil else {
+                guard let err = error else { return }
+                print("認証情報の保存に失敗しました：\(err)")
+                return
+            }
+            print("認証情報の保存に成功しました：\(user.email!)")
+        }
+    }
     @IBAction func presentLogInVC(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -27,15 +49,21 @@ class UserSignUpViewController: UIViewController {
         
         createUserPWTextField.isSecureTextEntry = true
         againUserPWTextField.isSecureTextEntry = true
-        signInButton.layer.cornerRadius = 5.0
-        signInButton.backgroundColor = UIColor.rgb(red: 180, green: 150, blue: 255)
+        signUpButton.layer.cornerRadius = 5.0
+        signUpButton.backgroundColor = UIColor.rgb(red: 180, green: 150, blue: 255)
         
         addUserEmailTextField.delegate = self
         createUserPWTextField.delegate = self
         againUserPWTextField.delegate = self
         
+        textFieldDidChangeSelection(addUserEmailTextField)
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    private func handlerAuthToFirebase() {
+        
+    
     }
 }
 
@@ -48,7 +76,7 @@ extension UserSignUpViewController: UITextFieldDelegate {
         let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         
         guard let keyboardMinY = keyboardFrame?.minY else { return }
-        let signInbuttonMaxY = signInButton.frame.maxY
+        let signInbuttonMaxY = signUpButton.frame.maxY
         let distance = signInbuttonMaxY - keyboardMinY + 10
         
         UIView.animate(withDuration: 0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
@@ -67,11 +95,11 @@ extension UserSignUpViewController: UITextFieldDelegate {
         let againUserPWIsEmpty = againUserPWTextField.text?.isEmpty ?? true
         
         if emailIsEmpty || userPWIsEmpty || againUserPWIsEmpty {
-            signInButton.isEnabled = false
-            signInButton.backgroundColor = UIColor.rgb(red: 180, green: 150, blue: 255)
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = UIColor.rgb(red: 180, green: 150, blue: 255)
         } else {
-            signInButton.isEnabled = true
-            signInButton.backgroundColor = .systemGray2
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = .systemGray2
         }
     }
 }

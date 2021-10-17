@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class UserLogInViewController: UIViewController {
     
@@ -36,6 +37,7 @@ class UserLogInViewController: UIViewController {
         userIDTextField.delegate = self
         userPWTextField.delegate = self
         
+        textFieldDidChangeSelection(userIDTextField)
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hiderKeyboard), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
