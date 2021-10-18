@@ -24,6 +24,8 @@
 		CF419D28271C8CAA00D6478D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF419D27271C8CAA00D6478D /* FirebaseAnalytics */; };
 		CF419D2A271C8CAA00D6478D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CF419D29271C8CAA00D6478D /* FirebaseAuth */; };
 		CF419D2C271C8CAA00D6478D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CF419D2B271C8CAA00D6478D /* FirebaseFirestore */; };
+		CF419D30271DCD5800D6478D /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF419D2F271DCD5800D6478D /* UserProfile.storyboard */; };
+		CF419D33271DCD8500D6478D /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF419D32271DCD8500D6478D /* UserProfileViewController.swift */; };
 		CF8AD1082719DCF9009974CB /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8AD1072719DCF9009974CB /* Singleton.swift */; };
 		CFF2ECEA2715E96B00D4A0DB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,8 @@
 		CF02934C2708DA6D00A8C493 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CF02934F2708DAB600A8C493 /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
 		CF419D13271AFAEA00D6478D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF419D2F271DCD5800D6478D /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
+		CF419D32271DCD8500D6478D /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		CF8AD1072719DCF9009974CB /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		CFF2ECE92715E96B00D4A0DB /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,7 @@
 		CF0293282705B36C00A8C493 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF419D2E271DCC8500D6478D /* UserProfileViewController */,
 				CF02934B2708DA5200A8C493 /* FirstView */,
 				CF02932C2707069A00A8C493 /* UserLogIn */,
 				CF02932B2705B3BB00A8C493 /* UserSignUp */,
@@ -183,6 +188,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF419D2E271DCC8500D6478D /* UserProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF419D32271DCD8500D6478D /* UserProfileViewController.swift */,
+				CF419D2F271DCD5800D6478D /* UserProfile.storyboard */,
+			);
+			path = UserProfileViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +267,7 @@
 				CF02933D27070A2E00A8C493 /* UserSignUp.storyboard in Resources */,
 				CF0293502708DAB600A8C493 /* First.storyboard in Resources */,
 				CF02931B2705B35700A8C493 /* Main.storyboard in Resources */,
+				CF419D30271DCD5800D6478D /* UserProfile.storyboard in Resources */,
 				CF02933A270709EA00A8C493 /* UserLogIn.storyboard in Resources */,
 				CF419D14271AFAEA00D6478D /* GoogleService-Info.plist in Resources */,
 			);
@@ -266,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF0293182705B35700A8C493 /* ViewController.swift in Sources */,
+				CF419D33271DCD8500D6478D /* UserProfileViewController.swift in Sources */,
 				CF8AD1082719DCF9009974CB /* Singleton.swift in Sources */,
 				CF0293362707073500A8C493 /* UserSignUpViewController.swift in Sources */,
 				CF0293142705B35700A8C493 /* AppDelegate.swift in Sources */,
